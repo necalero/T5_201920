@@ -2,16 +2,16 @@ package model.data_structures;
 
 public class HashTableSeparateChaining<Key, Value> 
 {
-<<<<<<< HEAD
-	int capacidad;
+
+
 	int[] keys;
 	Nodo[] data;
-=======
+
 	private int n;                                // number of key-value pairs
     private int m;                                // hash table size
     private SequentialSearchST<Key, Value>[] st;  // array of linked-list symbol tables
 	private int capacidad;
->>>>>>> 3f7d9151c520db96607538f6d463470c27c8b985
+
 	
 	public HashTableSeparateChaining(int m)
 	{
@@ -124,18 +124,9 @@ public class HashTableSeparateChaining<Key, Value>
         if (st[i].contains(key)) n--;
         st[i].delete(key);
 
-        // halve table size if average length of list <= 2
-        if (m > INIT_CAPACITY && n <= 2*m) resize(m/2);
+        
     } 
 
-    // return keys in symbol table as an Iterable
-    public Iterable<Key> keys() {
-        Queue<Key> queue = new Queue<Key>();
-        for (int i = 0; i < m; i++) {
-            for (Key key : st[i].keys())
-                queue.enqueue(key);
-        }
-        return queue;
-    } 
+
 
 }
